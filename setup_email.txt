@@ -1,0 +1,25 @@
+Hello Meena,
+
+I updated the grading tools on github. Here's a summary of all the tools.
+I updated the grading tools/scripts in the gihtub repo. You'll need to merge this pull request (https://github.com/tylerharter/caraza-harter-com/pull/26). After that, you should see all the grading scripts used here https://github.com/tylerharter/caraza-harter-com/tree/master/cs220_tools
+I attached the notebook that I used for creating csv of scores to be upload to canvas with this email ('canvas-project-example.ipynb')
+I updated the README for autograder here [https://github.com/msyamkumar/cs220-projects/tree/master/dockerGrader]. I might be missing some steps here, but you can ask me later if you run into any issues in setting this up.
+
+
+Steps for updating score on canvas:
+Download all submission using s3_backup.py (Run `python s3_backup.py a` twice)
+Run extract_grades.py to calculate all the grades (stores in grades/p1.json file)
+Run jupyter notebook ('canvas-project-example.ipynb') to create new csv that is uploaded to canvas. (You can tweak things like late days, individual scores, scaling scores etc here)
+
+Steps for CR assignment:
+Download all submission using s3_backup.py
+Create CR assignment json file using assign-crs.py
+Run the aws upload command to upload the json file.
+
+Steps for updating late days:
+Download all submission using s3_backup.py
+Run `python share_project_summary.py` to create summary
+Run `python secure_email.py project_emails.json projects` to upload summary.
+
+
+Feel free to ask me in case you need any help
